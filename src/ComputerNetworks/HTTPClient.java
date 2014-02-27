@@ -10,11 +10,11 @@ import java.io.IOException;
 public class HTTPClient {
     public static void main (String args[]) throws IOException {
         
-        Socket clientSocket = new Socket("localhost",6789);
+        Socket clientSocket = new Socket("www.google.com",80);
         try {
         	
 //			HTTPClient client = new HTTPClient(clientSocket, args[0], new URI(args[1] + ":" + args[2]), args[3]);
-        	HTTPClient client = new HTTPClient(clientSocket, "GET", new URI("http://www.google.be/index.html:80"), "HTTP/1.0");
+        	HTTPClient client = new HTTPClient(clientSocket, "GET", new URI("/index.html"), "HTTP/1.0");
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
